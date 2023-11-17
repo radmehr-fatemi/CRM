@@ -1,0 +1,7 @@
+@import "../../../styles/variables.scss";
+
+.homePage {
+    @include mx();
+    width: 100vw;
+    padding: 0 1rem;
+}

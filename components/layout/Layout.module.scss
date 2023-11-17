@@ -1,0 +1,42 @@
+@import "../../styles/variables.scss";
+@import "../../styles/Keyframes.scss";
+
+.header {
+    width: 100vw;
+    @include flex();
+    @include mx();
+    animation: Show .3s .2s;
+    padding: .6rem 1rem ;
+
+    a {
+
+        &:nth-child(2) {
+            background-color: $color-green;
+            padding: .2rem;
+            border-radius: 4px;
+
+            @include md {
+                &:hover {
+                    background-color: $color-green2;
+                }
+            }
+        }
+    }
+}
+
+.main {
+    @include mx();
+    min-height: calc( 100vh - 70px )
+}
+
+.footer {
+    @include mx();
+    width: 100vw !important;
+    text-align: center;
+    background: linear-gradient( #6c7576 ,rgb(90, 121, 109) );
+    padding: .2rem;
+
+    a {
+        @include flex( center );
+    }
+}
