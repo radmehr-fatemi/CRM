@@ -1,0 +1,55 @@
+@import "../../../styles/variables.scss";
+@import "../../../styles/Keyframes.scss";
+
+.addCustomer {
+    @include mx();
+    padding: 1rem;
+
+    h3 {
+        text-align: center;
+        animation: Show .3s;
+    }
+}
+
+.form {
+    width: 100%;
+}
+
+.buttons {
+    @include flex();
+    animation: Show .3s;
+
+    button {
+        width: 70px;
+        height: 22px;
+        border-radius: 4px;
+        background: $color-white;
+        font-weight: 700;
+        cursor: pointer;
+
+        &:nth-child(1) {
+            border: 2px solid $color-red;
+            color: $color-red;
+
+            @include md {
+                &:hover {
+                    background-color: $color-red;
+                    color: $color-white;
+                }
+            }
+        }
+
+        &:nth-child(2) {
+            border: 2px solid $color-green;
+            color: $color-green;
+
+            @include md {
+
+                &:hover {
+                    background-color: $color-green;
+                    color: $color-white;
+                }
+            }
+        }
+    }
+}

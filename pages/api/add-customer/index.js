@@ -4,6 +4,7 @@ import connectDB from "../../../utils/connectDB";
 export default async function handler(req, res) {
 
     const { method, body } = req;
+    const regex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
 
     // Connect to DB
     try {
@@ -21,10 +22,12 @@ export default async function handler(req, res) {
     if (method === "GET") {
         try {
             const customers = await Customer.find();
+            const dataQuantity = customers.length;
             res.status(200).json({
                 status: "success",
                 massage: "Data received successfully",
-                data: customers,
+                dataQuantity,
+                data: body,
             })
         } catch (err) {
             console.log("Error in get data #/api GET")
@@ -38,13 +41,25 @@ export default async function handler(req, res) {
 
     // POST
     if (method === "POST") {
+        const { name ,lastName ,email } = body;
+
         try {
-            const customer = await Customer.create(body.data);
-            res.status(200).json({
-                status: "success",
-                massage: "post data was successfully",
-                data: customer,
-            })
+            if (!name.trim() && !lastName.trim() && !regex.test(email)) {
+                res.status(422).json({
+                    status: "failed",
+                    massage: "Invalid Data",
+                })
+            } else {
+                const customer = await new Customer(body)
+                customer.save()
+                res.status(200).json({
+                    status: "success",
+                    massage: "post data was successfully",
+                    data: customer,
+                })
+            console.log(body)
+
+            }
         } catch (err) {
             console.log("Error in get data #/api POST")
             return res.status(500).json({
