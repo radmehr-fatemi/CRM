@@ -1,0 +1,41 @@
+@import "../../../styles/variables.scss";
+@import "../../../styles/Keyframes.scss";
+
+// .editPage{}
+
+.buttons {
+    @include flex( space-around );
+    margin-bottom: 1rem;
+
+    button {
+        padding: .1rem 1.4rem;
+        border: 2px solid;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    button:nth-child(1) {
+        border-color: $color-red;
+        color: $color-red;
+
+        @include md {
+            &:hover {
+                background-color: $color-red;
+                color: $color-white;
+            }
+        }
+    }
+
+    button:nth-child(2) {
+        border-color: $color-green;
+        color: $color-green;
+
+        @include md {
+            &:hover {
+                background-color: $color-green;
+                color: $color-white;
+            }
+        }
+    }
+
+}

@@ -26,13 +26,14 @@ export default async function handler(req, res) {
             customer.email = body.email;
             customer.address = body.address;
             customer.postalCode = body.postalCode;
-            customer.phone = body.phone;
+            customer.phone = "0000000000";
             customer.date = body.date;
-            customer.updateAt = body.updateAt;
-            customer.products = Date.now();
+            customer.updateAt = Date.now();
+            customer.products = body.products;
+            customer.save()
             res.status(200).json({
                 status: "success",
-                massage: "Get data successfully",
+                massage: "Patch data successfully",
                 data: customer,
             })
         } catch (err) {

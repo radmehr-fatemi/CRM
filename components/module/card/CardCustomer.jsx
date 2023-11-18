@@ -37,7 +37,7 @@ const CardCustomer = (props) => {
 
             <div className={styles.field2} >
                 <button onClick={deleteHandler} className={styles.button} >Delete</button>
-                <Link className={styles.link1} href={`/edit/`} > Edit </Link>
+                <Link className={styles.link1} href={`/edit/${_id}`} > Edit </Link>
                 <Link className={styles.link2} href={`/customer/${_id}`} > Details </Link>
             </div>
             <ToastContainer style={{
