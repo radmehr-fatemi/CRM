@@ -8,7 +8,7 @@ const HomePage = ({ customers }) => {
     return (
         <div className={ styles.homePage } >
             {
-                customers.map( customer => ( <CardCustomer { ...customer } /> ))
+                customers.map( customer => ( <CardCustomer key={customer._id} { ...customer } /> ))
             }
         </div>
     );
