@@ -1,0 +1,110 @@
+@import "../../../styles/Keyframes.scss";
+@import "../../../styles/variables.scss";
+
+.customerPage {
+    padding: 1rem;
+
+    h3 {
+        text-align: center;
+        animation: Show .3s;
+    }
+
+    li {
+        list-style-type: none;
+        animation: Show .3s;
+        @include flex();
+    }
+
+    span {
+        color: rgb(92, 150, 169);
+        animation: Show .3s;
+    }
+}
+
+// .field1 {
+// }
+
+.field1_ul {
+    display: grid;
+    grid-template-columns: 1fr ;
+    grid-gap: 8px;
+
+    li {
+        border-bottom: 1px solid #627478;
+        margin: .6rem 0;
+    }
+}
+
+.field2 {
+    margin: .6rem 0 ;
+    border: 1px solid #627478;
+    padding: .4rem;
+    border-radius: 4px;
+}
+
+.field2_ul_1 {
+    @include flex();
+    
+    li {
+        text-align: center;
+        width: 20%;
+    }
+
+}
+
+.field2_ul_2 {
+    @include flex();
+
+    span {
+        width: 20%;
+        margin: .4rem 0;
+    }
+}
+
+.field3 {
+    @include flex();
+    height: 24px;
+
+    span {
+        font-weight: 700
+    }
+
+div {
+    @include flex();
+    height: 90%;
+    width: 140px;
+}
+
+    button {
+        height: 100%;
+        width: 60px;
+        border: 1px solid $color-red;
+        border-radius: 4px;
+        color: $color-red;
+        background: none;
+        cursor: pointer;
+
+        @include md {
+            &:hover {
+                background-color: $color-red;
+                color: $color-white;
+            }
+        }
+    }
+
+    a {
+        height: 100%;
+        width: 60px;
+        border: 1px solid $color-green;
+        border-radius: 4px;
+        color: $color-green;
+        text-align: center;
+        
+        @include md {
+            &:hover {
+                background-color: $color-green;
+                color: $color-white;
+            }
+        }
+    }
+}

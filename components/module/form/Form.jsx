@@ -1,5 +1,3 @@
-import React from 'react';
-
 //Style
 import styles from "./Form.module.scss";
 
