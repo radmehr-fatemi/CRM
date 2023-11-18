@@ -1,3 +1,5 @@
+import moment from "moment";
+
 //Style
 import styles from "./Form.module.scss";
 
@@ -16,6 +18,8 @@ const Form = ({ form, setForm }) => {
         phone,
         postalCode,
     } = form;
+
+    const newDate = moment(date).utc().format("YYYY-MM-DD");
 
     const changeHandler = e => {
         const { name, value } = e.target;
@@ -60,7 +64,7 @@ const Form = ({ form, setForm }) => {
                 name="date"
                 label="Date"
                 type="Date"
-                value={date}
+                value={newDate}
                 changeHandler={(e) => changeHandler(e)}
             />
             <InputForm

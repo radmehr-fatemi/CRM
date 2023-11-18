@@ -5,11 +5,13 @@ import 'react-toastify/dist/ReactToastify.css';
 
 //Style
 import styles from "./CustomerPage.module.scss";
+import moment from "moment/moment";
 
 const CustomerPage = ({ customer }) => {
 
     const { _id, name, lastName, email, phone, address, postalCode, date, products } = customer;
     const router = useRouter();
+    const newDate = moment(date).utc().format("YYYY-MM-DD");
 
     const deleteHandler = async () => {
         const res = await fetch(`/api/delete/${_id}`, { method: "DELETE" });
@@ -45,7 +47,7 @@ const CustomerPage = ({ customer }) => {
                         Postal Code <span> {postalCode} </span>
                     </li>
                     <li>
-                        Date <span> {date} </span>
+                        Date <span> {newDate} </span>
                     </li>
                 </ul>
             </div>
