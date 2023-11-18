@@ -1,12 +1,15 @@
-import React from 'react';
-
 //Style
 import styles from "./HomePage.module.scss";
 
-const HomePage = () => {
+//Component
+import CardCustomer from '../../module/card/CardCustomer';
+
+const HomePage = ({ customers }) => {
     return (
         <div className={ styles.homePage } >
-            Home Page
+            {
+                customers.map( customer => ( <CardCustomer { ...customer } /> ))
+            }
         </div>
     );
 };

@@ -1,0 +1,57 @@
+@import "../../../styles/Keyframes.scss";
+@import "../../../styles/variables.scss";
+
+.cardCustomer {
+    height: 60px;
+    background: linear-gradient( to right top, #597575aa ,#90a0a0a9 ,#516166b0);
+    margin: .4rem;
+    padding: .4rem;
+    border-radius: 4px;
+    @include flex();
+    animation: Show .3s;
+}
+
+.field1 {
+    width: 50%;
+    h4 {
+        margin: .2rem 0;
+    }
+    p {
+        font-size: .9rem
+    }
+}
+
+.field2 {
+    width: 50%;
+    @include flex();
+    width: 140px;
+}
+
+.button {
+    padding: .1rem;
+    border: 1px solid $color-red;
+    border-radius: 4px;
+    color: $color-red;
+    background: none;
+    cursor: pointer;
+
+    @include md {
+        &:hover {
+            background-color: $color-red;
+            color: $color-white;
+        }
+    }
+}
+
+.link {
+    padding: .1rem;
+    border: 2px solid $color-white;
+    border-radius: 4px;
+
+    @include md {
+        &:hover {
+            background-color: $color-white;
+            color: #111;
+        }
+    }
+}
