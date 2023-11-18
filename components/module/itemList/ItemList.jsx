@@ -43,53 +43,50 @@ const ItemList = ({ form, setForm }) => {
 
             <div className={styles.products_field} >
                 {
-                    products.map((product, index) => (
-                        <div key={index} className={styles.inputForms} >
-
-                            <InputForm
-                                name="name"
-                                label="Product Name"
-                                type="text"
-                                value={product.name}
-                                changeHandler={e => changeHandler(e, index)}
-                            />
-
-                            <div className={styles.inputForms_twice} >
-                                <InputForm
-                                    name="price"
-                                    label="price"
-                                    type="text"
-                                    value={product.price}
-                                    changeHandler={e => changeHandler(e, index)}
-                                />
-                                <InputForm
-                                    name="qty"
-                                    label="Quantity"
-                                    type="tel"
-                                    value={product.qty}
-                                    changeHandler={e => changeHandler(e, index)}
-                                />
-                            </div>
-
-                            <button className={ styles.buttonDelete } onClick={() => deleteHandler(index)} >Remove</button>
-                        </div>
-                    ))
+                    products.map((product, index) => (<ProductInput
+                         key={index}
+                          product={product} 
+                          changeHandler={e => changeHandler(e, index)}
+                          deleteHandler={() => deleteHandler(index)}
+                           />))
                 }
 
-                <button className={ styles.buttonAdd } onClick={addHandler} >Add item</button>
+                <button className={styles.buttonAdd} onClick={addHandler} >Add item</button>
             </div>
         </div>
     );
 };
 
-const ProductInput = ({ product, changeHandler }) => {
-    InputForm(
-        name = "Product Name",
-        type = "text",
-        value = product,
-        id = { id },
-        changeHandler = { changeHandler }
-    )
+const ProductInput = ({ product, changeHandler ,deleteHandler }) => {
+
+    return <div className={styles.inputForms} >
+        <InputForm
+            name="name"
+            label="Product Name"
+            type="text"
+            value={product.name}
+            changeHandler={changeHandler}
+        />
+
+        <div className={styles.inputForms_twice} >
+            <InputForm
+                name="price"
+                label="price"
+                type="text"
+                value={product.price}
+                changeHandler={changeHandler}
+            />
+            <InputForm
+                name="qty"
+                label="Quantity"
+                type="tel"
+                value={product.qty}
+                changeHandler={changeHandler}
+            />
+        </div>
+
+        <button className={styles.buttonDelete} onClick={deleteHandler} >Remove</button>
+    </div>
 }
 
 export default ItemList;

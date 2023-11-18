@@ -50,7 +50,7 @@ const AddCustomer = () => {
                     postalCode: "",
                     products: [],
                 })
-                router.push("/")
+                const timeOut = setTimeout( () => router.push("/"), 1400)
             }
         }
     };

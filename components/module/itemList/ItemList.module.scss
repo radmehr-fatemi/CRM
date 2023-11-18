@@ -6,7 +6,7 @@
     border: 1px solid #b7c0c2;
     padding: .4rem;
     border-radius: 4px;
-    margin: .4rem auto;
+    margin: .8rem auto;
     animation: Show .3s;
 
     p {
@@ -16,12 +16,14 @@
 
 .products_field {
     text-align: center;
+    max-height: 400px;
+    overflow: auto;
 }
 
 .inputForms {
     height: 150px;
     background: linear-gradient(to right bottom, #333333aa, #6c7979a9, #444444b0);
-    margin: 1.4rem 0;
+    margin: .6rem 0;
     border-radius: 4px;
     animation: Show .3s;
     padding: .4rem;
