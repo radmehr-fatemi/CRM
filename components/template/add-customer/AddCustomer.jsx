@@ -50,6 +50,7 @@ const AddCustomer = () => {
                     postalCode: "",
                     products: [],
                 })
+                router.push("/")
             }
         }
     };

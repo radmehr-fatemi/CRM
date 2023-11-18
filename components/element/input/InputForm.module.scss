@@ -1,0 +1,29 @@
+@import "../../../styles/Keyframes.scss";
+@import "../../../styles/variables.scss";
+
+.inputForm {
+    width: 100%;
+    animation: Show .3s;
+    padding: .2rem;
+    
+    @include flex(flex-start, start) {
+        flex-direction: column;
+    }
+
+    label{
+        margin: .1rem;
+    }
+
+    input {
+        width: 100%;
+        border: none;
+        background-color: $color-white;
+        border-radius: 4px;
+        padding: .2rem;
+        box-shadow: -2px 2px 6px rgb(197, 204, 205) inset;
+
+        &:focus {
+            outline: none;
+        }
+    }
+}

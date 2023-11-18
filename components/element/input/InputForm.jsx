@@ -1,10 +1,13 @@
 import React from 'react';
 
-const InputForm = ({ name ,id ,value ,changeHandler ,type }) => {
+//Style
+import styles from "./InputForm.module.scss";
+
+const InputForm = ({ name ,label ,value ,changeHandler ,type }) => {
     return (
-        <div>
-            <label htmlFor={name}> { name } </label>
-            <input type={type} value={value} onChange={changeHandler} id={id} />
+        <div className={ styles.inputForm } >
+            <label htmlFor={name}> { label } </label>
+            <input type={type} value={value} onChange={changeHandler} id={name} name={name} />
         </div>
     );
 };

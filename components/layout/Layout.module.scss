@@ -7,7 +7,10 @@
     @include mx();
     animation: Show .3s .2s;
     padding: .6rem 1rem ;
-    background: linear-gradient( to right top, #333 ,#6c7979 ,#444);
+    background: linear-gradient( to right top, #333333aa ,#6c7979a9 ,#444444b0);
+    backdrop-filter: blur(4px);
+    position: sticky;
+    top: 0;
 
     a {
 
