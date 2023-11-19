@@ -8,6 +8,7 @@ import styles from "./AddCustomer.module.scss";
 
 //Component
 import Form from "../../module/form/Form";
+import ShowTitle from "@/utils/ShowTitle";
 
 const AddCustomer = () => {
 
@@ -71,6 +72,8 @@ const AddCustomer = () => {
 
     return (
         <div className={styles.addCustomer} >
+            <ShowTitle description="Add customer" title="Add customer" />
+            
             <h3> Add New Customer </h3>
 
             <div className={styles.form} >

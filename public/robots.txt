@@ -1,0 +1,5 @@
+User-agent:*
+Allow:/
+Disallow:/edit:id
+
+Sitemap: http://http://localhost:3001/sitemap.xml

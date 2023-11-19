@@ -1,3 +1,4 @@
+import { useRouter } from "next/router";
 import { useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
@@ -7,7 +8,7 @@ import styles from "./EditPage.module.scss"
 
 //Component
 import Form from "../../module/form/Form";
-import { useRouter } from "next/router";
+import ShowTitle from "../../../utils/ShowTitle";
 ;
 const EditPage = ({ data, setData }) => {
 
@@ -45,6 +46,8 @@ const EditPage = ({ data, setData }) => {
     
     return (
         <div className={ styles.editPage } >
+            <ShowTitle title="Edit customer" description="edit customer" />
+            
             <Form form={form} setForm={setForm} />
             
             <div className={styles.buttons} >

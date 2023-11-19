@@ -7,6 +7,9 @@ import 'react-toastify/dist/ReactToastify.css';
 import styles from "./CustomerPage.module.scss";
 import moment from "moment/moment";
 
+//Component
+import ShowTitle from "../../../utils/ShowTitle";
+
 const CustomerPage = ({ customer }) => {
 
     const { _id, name, lastName, email, phone, address, postalCode, date, products } = customer;
@@ -24,6 +27,8 @@ const CustomerPage = ({ customer }) => {
 
     return (
         <div className={styles.customerPage} >
+            <ShowTitle title="Customer Details" description="show customer Details" />
+            
             <h3> Customer`s Details </h3>
 
             <div className={styles.field1} >
